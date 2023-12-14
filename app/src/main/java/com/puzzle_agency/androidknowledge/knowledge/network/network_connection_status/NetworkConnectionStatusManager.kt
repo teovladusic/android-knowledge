@@ -5,12 +5,10 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 
@@ -32,10 +30,6 @@ class NetworkConnectionStatusManagerImpl (
     coroutineScope: CoroutineScope
 ) : NetworkConnectionStatusManager {
 
-    companion object {
-        private const val DELAY_ON_START = 2000L
-    }
-
     private val connectivityManager: ConnectivityManager = context.getSystemService(ConnectivityManager::class.java)
 
     private val networkCallback = NetworkCallback()
@@ -44,7 +38,6 @@ class NetworkConnectionStatusManagerImpl (
 
     override val isNetworkConnectedFlow: StateFlow<Boolean?> =
         _currentNetwork
-            .onStart { delay(DELAY_ON_START) }
             .map { it.isConnected() }
             .stateIn(
                 scope = coroutineScope,
