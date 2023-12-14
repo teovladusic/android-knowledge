@@ -20,6 +20,7 @@ package com.puzzle_agency.androidknowledge.knowledge.deep_links
 /**
  * Useful resources
  *  - Generate and test asset links: https://developers.google.com/digital-asset-links/tools/generator
+ *  - Get signing report (SHA-256) -> gradle signingReport
  *  - Debugging deep links: https://medium.com/androiddevelopers/deep-links-crash-course-part-3-troubleshooting-your-deep-links-61329fecb93
  *  - Complex paths https://proandroiddev.com/how-to-handle-deep-link-with-complex-path-like-this-811216a0c802
  */
