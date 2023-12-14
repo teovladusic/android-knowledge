@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.deep_links
+package com.puzzle_agency.androidknowledge.knowledge.deep_links
 
 
 /**

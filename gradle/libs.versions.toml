@@ -1,0 +1,56 @@
+[versions]
+agp = "8.2.0"
+kotlin = "1.9.10"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+androidx-test-ext-junit = "1.1.5"
+espresso-core = "3.5.1"
+lifecycle-runtime-ktx = "2.6.2"
+activity-compose = "1.8.1"
+compose-bom = "2023.10.01"
+dagger-hilt = "2.46" #2.47+ throws ksp error
+dagger-hilt-navigation-compose = "1.1.0"
+retrofit = "2.9.0"
+retrofit-okhttp = "4.12.0"
+retrofit-converter = "1.0.0"
+ksp = "1.9.10-1.0.13"
+ui-test-manifest = "1.5.4"
+ui-tooling = "1.5.4"
+material3 = "1.2.0-alpha12"
+
+[libraries]
+androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
+androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "ui-test-manifest" }
+androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "ui-tooling" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+ui = { group = "androidx.compose.ui", name = "ui" }
+material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger-hilt" }
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger-hilt" }
+dagger-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "dagger-hilt-navigation-compose" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-converter" }
+retrofit-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "retrofit-okhttp" }
+retrofit-okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "retrofit-okhttp" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+com-android-library = { id = "com.android.library", version.ref = "agp" }
+
+[bundles]
+retrofit = ["retrofit", "retrofit-okhttp", "retrofit-okhttp-logging", "retrofit-converter"]
+dagger-hilt = ["dagger-hilt", "dagger-hilt-navigation-compose"]
+ui = ["ui", "ui-graphics", "ui-tooling", "ui-tooling-preview"]
