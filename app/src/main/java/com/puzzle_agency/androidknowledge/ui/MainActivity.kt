@@ -9,7 +9,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.puzzle_agency.androidknowledge.knowledge.design_patterns.dependency_injection.HiltShowcaseUi
 import com.puzzle_agency.androidknowledge.ui.theme.AndroidKnowledgeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,8 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Greeting(name = "Android Knowledge")
-                    HiltShowcaseUi()
+                    Greeting(name = "Android Knowledge")
                 }
             }
         }
