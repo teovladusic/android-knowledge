@@ -18,6 +18,7 @@ ksp = "1.9.10-1.0.13"
 ui-test-manifest = "1.5.4"
 ui-tooling = "1.5.4"
 material3 = "1.2.0-alpha12"
+converter-gson = "2.9.0"
 
 [libraries]
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
@@ -43,6 +44,7 @@ ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converter-gson" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
