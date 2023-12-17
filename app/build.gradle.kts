@@ -73,9 +73,12 @@ dependencies {
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.bundles.dagger.hilt)
 
-    //compose lifecycle
+    // compose lifecycle
     implementation(libs.androidx.lifecycle.runtime.compose)
 
-    //material
+    // material
     implementation(libs.material3)
+
+    // icons
+    implementation(libs.androidx.material.icons.extended)
 }

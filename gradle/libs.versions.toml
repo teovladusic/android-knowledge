@@ -10,6 +10,7 @@ activity-compose = "1.8.1"
 compose-bom = "2023.10.01"
 dagger-hilt = "2.46" #2.47+ throws ksp error
 dagger-hilt-navigation-compose = "1.1.0"
+material-icons-extended = "1.5.4"
 retrofit = "2.9.0"
 retrofit-okhttp = "4.12.0"
 retrofit-converter = "1.0.0"
@@ -20,6 +21,7 @@ material3 = "1.2.0-alpha12"
 
 [libraries]
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons-extended" }
 androidx-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "ui-test-manifest" }
 androidx-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "ui-tooling" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
