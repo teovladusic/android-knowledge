@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view
+package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.header
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -41,21 +41,12 @@ object SampleHeaderView {
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
-    fun Compose(
-        query: String,
-        userInitials: String,
-        onQueryChange: (String) -> Unit,
-        searchActive: Boolean,
-        onSearchActiveChange: (Boolean) -> Unit,
-        onUserInitialsClick: () -> Unit,
-        onStatsClick: () -> Unit,
-        onCardsClick: () -> Unit,
-        backgroundColor: Color,
-        searchResults: List<String>
-    ) {
+    fun Compose(headerState: HeaderState) {
+        val searchActive = headerState.uiState.isSearchActive
+
         Row(
             modifier = Modifier
-                .background(backgroundColor)
+                .background(headerState.backgroundColor)
                 .then(if (searchActive) Modifier else Modifier.statusBarsPadding())
                 .padding(
                     horizontal = if (searchActive) 0.dp else 16.dp,
@@ -66,17 +57,20 @@ object SampleHeaderView {
             horizontalArrangement = Arrangement.spacedBy(if (searchActive) 0.dp else 8.dp)
         ) {
             AnimatedVisibility(visible = !searchActive) {
-                UserInitialsView(initials = userInitials, onClick = onUserInitialsClick)
+                UserInitialsView(
+                    initials = headerState.uiState.userInitials,
+                    onClick = headerState::onUserInitialsClick
+                )
             }
 
             CustomSearchBar(
-                query = query,
-                onQueryChange = onQueryChange,
+                query = headerState.uiState.searchQuery,
+                onQueryChange = headerState::queryChanged,
                 modifier = Modifier
                     .weight(1f)
                     .padding(bottom = 8.dp), // add bottom padding to match search bar top padding
                 active = searchActive,
-                onActiveChange = onSearchActiveChange,
+                onActiveChange = headerState::onSearchActiveChange,
                 colors = SearchBarDefaults.colors(
                     containerColor = iconsBackgroundColor.copy(
                         alpha = if (searchActive) 1f else iconsBackgroundColor.alpha
@@ -92,15 +86,15 @@ object SampleHeaderView {
                 trailingIcon = {
                     SearchBarTrailingIcon(
                         searchActive = searchActive,
-                        onStatsClick = onStatsClick,
-                        onCardsClick = onCardsClick,
-                        query = query,
-                        onQueryChange = onQueryChange
+                        onStatsClick = headerState::onStatsClick,
+                        onCardsClick = headerState::onCardsClick,
+                        query = headerState.uiState.searchQuery,
+                        onQueryChange = headerState::queryChanged
                     )
                 },
                 content = {
-                    if (searchResults.isNotEmpty()) {
-                        SearchResults(results = searchResults)
+                    if (headerState.uiState.searchResults.isNotEmpty()) {
+                        SearchResults(results = headerState.uiState.searchResults)
                     }
                 }
             )

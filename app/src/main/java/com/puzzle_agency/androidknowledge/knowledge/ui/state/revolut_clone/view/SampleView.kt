@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -14,8 +15,8 @@ import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleAction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleUiState
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base.BaseView
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base.Executor
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.state_holder.SampleHeaderAction
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.state_holder.SampleHeaderState
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.header.SampleHeaderView
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.header.rememberHeaderState
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -37,11 +38,19 @@ object SampleView : BaseView<SampleUiState, Unit, SampleAction> {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
             topBar = {
-                Toolbar(
-                    headerState = state.headerState,
-                    executor = executor,
-                    scrollValue = scrollValue
+                val backgroundColor by derivedStateOf {
+                    Color(color = 0xFF2B0944).copy(
+                        alpha = if (scrollValue > 100) 1f else scrollValue / 100f
+                    )
+                }
+
+                val headerState = rememberHeaderState(
+                    uiState = state.headerState,
+                    backgroundColor = backgroundColor,
+                    executeAction = { executor(SampleAction.ExecuteHeaderAction(it)) }
                 )
+
+                SampleHeaderView.Compose(headerState = headerState)
             }
         ) { padding ->
             SampleContentView.Compose(
@@ -58,42 +67,5 @@ object SampleView : BaseView<SampleUiState, Unit, SampleAction> {
                 onTransactionClick = { executor(SampleAction.TransactionClick(it)) }
             )
         }
-    }
-
-    @Composable
-    private fun Toolbar(
-        headerState: SampleHeaderState,
-        executor: Executor<SampleAction>,
-        scrollValue: Int
-    ) {
-        SampleHeaderView.Compose(
-            query = headerState.searchQuery,
-            userInitials = headerState.userInitials,
-            onQueryChange = {
-                val action = SampleHeaderAction.SearchQueryChanged(it)
-                executor(SampleAction.ExecuteHeaderAction(action))
-            },
-            searchActive = headerState.isSearchActive,
-            onSearchActiveChange = {
-                val action = SampleHeaderAction.SearchActiveChanged(it)
-                executor(SampleAction.ExecuteHeaderAction(action))
-            },
-            onUserInitialsClick = {
-                val action = SampleHeaderAction.UserInitialsClick
-                executor(SampleAction.ExecuteHeaderAction(action))
-            },
-            onStatsClick = {
-                val action = SampleHeaderAction.StatsClick
-                executor(SampleAction.ExecuteHeaderAction(action))
-            },
-            onCardsClick = {
-                val action = SampleHeaderAction.CardsClick
-                executor(SampleAction.ExecuteHeaderAction(action))
-            },
-            backgroundColor = Color(color = 0xFF2B0944).copy(
-                alpha = if (scrollValue > 100) 1f else scrollValue / 100f
-            ),
-            searchResults = headerState.searchResults
-        )
     }
 }
