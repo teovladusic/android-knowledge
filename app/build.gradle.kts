@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.puzzle_agency.androidknowledge"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -95,4 +95,7 @@ dependencies {
 
     // datastore
     implementation(libs.androidx.datastore.preferences)
+
+    // coil images
+    implementation(libs.coil.compose)
 }

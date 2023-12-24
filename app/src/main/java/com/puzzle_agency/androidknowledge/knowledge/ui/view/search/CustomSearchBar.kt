@@ -1,7 +1,10 @@
 package com.puzzle_agency.androidknowledge.knowledge.ui.view.search
 
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarColors
 import androidx.compose.material3.SearchBarDefaults
@@ -19,8 +22,10 @@ fun CustomSearchBar(
     onActiveChange: (Boolean) -> Unit = {},
     shape: Shape = SearchBarDefaults.inputFieldShape,
     colors: SearchBarColors = SearchBarDefaults.colors(),
+    placeholder: @Composable () -> Unit = {},
     content: @Composable ColumnScope.() -> Unit = {},
-    onQueryChange: (String) -> Unit
+    onQueryChange: (String) -> Unit,
+    trailingIcon: @Composable () -> Unit = {},
 ) {
     SearchBar(
         modifier = modifier,
@@ -30,7 +35,10 @@ fun CustomSearchBar(
         active = active,
         onActiveChange = onActiveChange,
         colors = colors,
-        shape = shape
+        shape = shape,
+        leadingIcon = { Icon(imageVector = Icons.Default.Search, contentDescription = null) },
+        placeholder = placeholder,
+        trailingIcon = trailingIcon
     ) {
         content()
     }

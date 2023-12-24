@@ -21,6 +21,7 @@ ui-tooling = "1.5.4"
 material3 = "1.2.0-beta01"
 converter-gson = "2.9.0"
 datastore-preferences = "1.0.0"
+coil-compose = "2.5.0"
 
 [libraries]
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
@@ -51,6 +52,7 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converter-gson" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

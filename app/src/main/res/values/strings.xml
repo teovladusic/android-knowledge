@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Android Knowledge</string>
+    <string name="main">Main</string>
+    <string name="accounts">Accounts</string>
+    <string name="add_money">Add money</string>
+    <string name="conversion">Conversion</string>
+    <string name="specifics">Specifics</string>
+    <string name="more">More</string>
+    <string name="see_all">See all</string>
+    <string name="search">Search</string>
+    <string name="widgets">Widgets</string>
+    <string name="total_assets">Total assets</string>
+    <string name="cash">Cash</string>
+    <string name="investing">Investing</string>
+    <string name="connected_accounts">Connected accounts</string>
+    <string name="savings">Savings</string>
+    <string name="cards">Cards</string>
+    <string name="disposable">Disposable</string>
+    <string name="general">General</string>
+    <string name="virtual">Virtual</string>
+    <string name="get_card">Get card</string>
 </resources>
