@@ -22,6 +22,7 @@ material3 = "1.2.0-beta01"
 converter-gson = "2.9.0"
 datastore-preferences = "1.0.0"
 coil-compose = "2.5.0"
+play-services-auth = "20.7.0"
 
 [libraries]
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
@@ -53,6 +54,7 @@ compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = 
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converter-gson" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore-preferences" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "play-services-auth" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

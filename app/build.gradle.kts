@@ -98,4 +98,7 @@ dependencies {
 
     // coil images
     implementation(libs.coil.compose)
+
+    // google sign in
+    implementation(libs.play.services.auth)
 }
