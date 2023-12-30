@@ -26,7 +26,6 @@ fun CircularGradientSpinner(
     colors: List<Color> = defaultSpinnerColors,
     animationDuration: Int = 400
 ) {
-
     val infiniteTransition = rememberInfiniteTransition(label = "transition")
 
     val rotateAnimation by infiniteTransition.animateFloat(
@@ -43,7 +42,7 @@ fun CircularGradientSpinner(
 
     CircularProgressIndicator(
         progress = { 1f },
-        modifier = Modifier
+        modifier = modifier
             .size(size = spinnerSize)
             .rotate(degrees = rotateAnimation)
             .border(
