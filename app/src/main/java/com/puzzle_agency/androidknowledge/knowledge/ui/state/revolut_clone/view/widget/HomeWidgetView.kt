@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.puzzle_agency.androidknowledge.R
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.SampleContentView
-import com.puzzle_agency.androidknowledge.knowledge.util.formatAsPrice
+import com.puzzle_agency.androidknowledge.knowledge.util.NumberFormatter
 import com.puzzle_agency.androidknowledge.ui.theme.NunitoFontFamily
 
 object HomeWidgetView {
@@ -63,7 +63,7 @@ object HomeWidgetView {
         WidgetContainer(modifier = Modifier.offset(y = SampleContentView.ITEM_OFFSET_DP.dp)) {
             WidgetTitleButton(title = stringResource(id = R.string.total_assets)) {}
 
-            val balanceSplitByDot = widget.totalBalance.formatAsPrice().split(",")
+            val balanceSplitByDot = NumberFormatter.formatAsPrice(widget.totalBalance).split(",")
             val eurInt = balanceSplitByDot.getOrNull(0) ?: "0"
             val centsInts = balanceSplitByDot.getOrNull(1) ?: "0.0"
 
@@ -147,7 +147,7 @@ object HomeWidgetView {
                 )
             } else {
                 Text(
-                    text = "${balance.formatAsPrice()} €",
+                    text = "${NumberFormatter.formatAsPrice(balance)} €",
                     color = Color.White,
                     fontFamily = NunitoFontFamily,
                     fontSize = 12.sp

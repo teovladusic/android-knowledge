@@ -35,7 +35,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.puzzle_agency.androidknowledge.R
-import com.puzzle_agency.androidknowledge.knowledge.util.formatAsPrice
+import com.puzzle_agency.androidknowledge.knowledge.util.NumberFormatter
 import com.puzzle_agency.androidknowledge.ui.theme.NunitoFontFamily
 
 object ParallaxView {
@@ -100,7 +100,7 @@ object ParallaxView {
                 fontFamily = NunitoFontFamily
             )
 
-            val balanceSplitByDot = balance.formatAsPrice().split(",")
+            val balanceSplitByDot = NumberFormatter.formatAsPrice(balance).split(",")
             val eurInt = balanceSplitByDot.getOrNull(0) ?: "0"
             val centsInts = balanceSplitByDot.getOrNull(1) ?: "0.0"
 
