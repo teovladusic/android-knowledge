@@ -107,4 +107,7 @@ dependencies {
 
     // accompanist permissions
     implementation(libs.accompanist.permissions)
+
+    // firebase
+    implementation(libs.firebase.messaging.ktx)
 }
