@@ -101,4 +101,10 @@ dependencies {
 
     // google sign in
     implementation(libs.play.services.auth)
+
+    // camera x
+    implementation(libs.bundles.camera)
+
+    // accompanist permissions
+    implementation(libs.accompanist.permissions)
 }
