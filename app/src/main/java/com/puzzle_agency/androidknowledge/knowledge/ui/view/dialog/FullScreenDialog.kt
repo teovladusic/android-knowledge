@@ -9,6 +9,7 @@ import com.puzzle_agency.androidknowledge.knowledge.ui.modifier.drag_to_dismiss.
 
 @Composable
 fun FullScreenDialog(
+    enableDraggableToDismiss: Boolean = true,
     onDismissRequest: () -> Unit,
     content: @Composable () -> Unit
 ) {
@@ -20,7 +21,16 @@ fun FullScreenDialog(
             usePlatformDefaultWidth = false,
         ),
     ) {
-        Box(modifier = Modifier.draggableToDismiss { onDismissRequest() }) {
+        Box(
+            modifier = Modifier
+                .then(
+                    if (enableDraggableToDismiss) {
+                        Modifier.draggableToDismiss { onDismissRequest() }
+                    } else {
+                        Modifier
+                    }
+                )
+        ) {
             content()
         }
     }
