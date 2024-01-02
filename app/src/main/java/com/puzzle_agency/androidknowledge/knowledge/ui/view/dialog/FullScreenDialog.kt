@@ -1,8 +1,11 @@
 package com.puzzle_agency.androidknowledge.knowledge.ui.view.dialog
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import com.puzzle_agency.androidknowledge.knowledge.ui.modifier.drag_to_dismiss.draggableToDismiss
 
 @Composable
 fun FullScreenDialog(
@@ -17,6 +20,8 @@ fun FullScreenDialog(
             usePlatformDefaultWidth = false,
         ),
     ) {
-        content()
+        Box(modifier = Modifier.draggableToDismiss { onDismissRequest() }) {
+            content()
+        }
     }
 }
