@@ -110,4 +110,7 @@ dependencies {
 
     // firebase
     implementation(libs.firebase.messaging.ktx)
+
+    // widget
+    implementation(libs.bundles.glance)
 }
