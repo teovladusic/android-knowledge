@@ -113,4 +113,7 @@ dependencies {
 
     // widget
     implementation(libs.bundles.glance)
+
+    // work manager
+    implementation(libs.work.runtime.ktx)
 }
