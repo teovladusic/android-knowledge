@@ -116,4 +116,8 @@ dependencies {
 
     // work manager
     implementation(libs.work.runtime.ktx)
+
+    // media 3 exoplayer
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
 }
