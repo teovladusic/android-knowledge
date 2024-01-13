@@ -25,7 +25,7 @@ interface NetworkConnectionStatusManager {
     fun stopListenNetworkState()
 }
 
-class NetworkConnectionStatusManagerImpl (
+class NetworkConnectionStatusManagerImpl(
     context: Context,
     coroutineScope: CoroutineScope
 ) : NetworkConnectionStatusManager {
@@ -140,19 +140,21 @@ class NetworkConnectionStatusManagerImpl (
         // Since we don't know the network state if NetworkCallback is not registered.
         // We assume that it's disconnected.
         return isListening &&
-                isAvailable &&
-                !isBlocked &&
-                networkCapabilities.isNetworkCapabilitiesValid()
+            isAvailable &&
+            !isBlocked &&
+            networkCapabilities.isNetworkCapabilitiesValid()
     }
 
     private fun NetworkCapabilities?.isNetworkCapabilitiesValid(): Boolean = when {
         this == null -> false
         hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) &&
-                hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) &&
-                (hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
-                        hasTransport(NetworkCapabilities.TRANSPORT_VPN) ||
-                        hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
-                        hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) -> true
+            hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED) &&
+            (
+                hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                    hasTransport(NetworkCapabilities.TRANSPORT_VPN) ||
+                    hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
+                    hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+                ) -> true
         else -> false
     }
 }

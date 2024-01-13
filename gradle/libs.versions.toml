@@ -6,6 +6,7 @@ core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
+legacy-support-v4 = "1.0.0"
 lifecycle-runtime-ktx = "2.6.2"
 activity-compose = "1.8.2"
 compose-bom = "2023.10.01"
@@ -30,8 +31,10 @@ camera-core = "1.3.1"
 accompanist-permissions = "0.33.2-alpha"
 firebase-messaging-ktx = "23.4.0"
 glance = "1.0.0-alpha05"
+media3-session = "1.2.0"
 
 [libraries]
+androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacy-support-v4" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle-runtime-ktx" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons-extended" }
 androidx-media3-ui = { module = "androidx.media3:media3-ui", version.ref = "media3-ui" }
@@ -75,6 +78,7 @@ firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messa
 androidx-glance = { module = "androidx.glance:glance", version.ref = "glance" }
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance" }
 work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work-runtime-ktx" }
+androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3-session" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

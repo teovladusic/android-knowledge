@@ -2,6 +2,7 @@ package com.puzzle_agency.androidknowledge.knowledge.notifications
 
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 /**
@@ -26,6 +27,8 @@ import javax.inject.Inject
  *             android:name="com.google.firebase.messaging.default_notification_color"
  *             android:resource="@color/blue700" />
  */
+
+@AndroidEntryPoint
 class FirebaseMessagingService : FirebaseMessagingService() {
 
     @Inject

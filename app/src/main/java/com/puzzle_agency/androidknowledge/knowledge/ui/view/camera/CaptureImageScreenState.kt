@@ -71,5 +71,7 @@ fun rememberCaptureImageScreenState(): CaptureImageScreenState {
         }
     }
 
-    return CaptureImageScreenState(controller = controller)
+    return remember {
+        CaptureImageScreenState(controller = controller)
+    }
 }
