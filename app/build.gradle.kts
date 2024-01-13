@@ -43,7 +43,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packaging {
         resources {
@@ -70,7 +70,7 @@ dependencies {
     androidTestImplementation(platform(libs.compose.bom))
 
     // Dagger Hilt
-    kapt(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.hilt.compiler)
     implementation(libs.bundles.dagger.hilt)
 
     // compose lifecycle
