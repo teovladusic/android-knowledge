@@ -2,9 +2,9 @@ package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.stat
 
 import android.util.Log
 import androidx.lifecycle.viewModelScope
+import com.puzzle_agency.androidknowledge.knowledge.ui.base.BaseViewModel
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.SampleAction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.SampleUiState
-import com.puzzle_agency.androidknowledge.knowledge.ui.base.BaseViewModel
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.data.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -86,4 +86,3 @@ class SampleViewModel @Inject constructor(
         }
     }
 }
-

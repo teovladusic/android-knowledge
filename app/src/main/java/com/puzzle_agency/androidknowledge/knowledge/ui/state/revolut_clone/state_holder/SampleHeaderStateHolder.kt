@@ -58,6 +58,7 @@ class SampleHeaderStateHolder(private val coroutineScope: CoroutineScope) {
 
     private val firstNames = listOf("Alice", "Bob", "Charlie", "David", "Eva", "Frank")
 
+    @Suppress("detekt.MagicNumber")
     private suspend fun fetchResults(query: String): List<String> {
         if (query.isBlank()) return emptyList()
 
@@ -66,6 +67,7 @@ class SampleHeaderStateHolder(private val coroutineScope: CoroutineScope) {
         return firstNames.filter { firstName -> firstName.contains(query, ignoreCase = true) }
     }
 
+    @Suppress("detekt.MagicNumber")
     private fun fetchUserInitials() {
         coroutineScope.launch {
             delay(500)

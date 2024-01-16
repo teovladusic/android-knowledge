@@ -1,5 +1,6 @@
 package com.puzzle_agency.androidknowledge.ui
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -24,6 +25,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         setContent {
             AndroidKnowledgeTheme {
