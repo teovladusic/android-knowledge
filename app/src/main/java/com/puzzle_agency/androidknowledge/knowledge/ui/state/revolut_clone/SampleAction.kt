@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.knowledge.ui.state
+package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone
 
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.state_holder.SampleHeaderAction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.parallax.ParallaxViewActionButtonType

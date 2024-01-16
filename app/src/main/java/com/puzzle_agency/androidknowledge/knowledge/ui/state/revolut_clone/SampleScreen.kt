@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.knowledge.ui.state
+package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
