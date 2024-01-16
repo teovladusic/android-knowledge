@@ -46,20 +46,20 @@ import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.
 import com.puzzle_agency.androidknowledge.knowledge.util.NumberFormatter
 import com.puzzle_agency.androidknowledge.ui.theme.NunitoFontFamily
 
-object HomeWidgetView {
+object SampleWidgetView {
 
     private const val CARD_ICON_SIZE_DP = 35
 
     @Composable
-    fun Compose(widget: HomeWidget) {
+    fun Compose(widget: SampleViewWidget) {
         when (widget) {
-            is HomeWidget.Cards -> CardsWidget(widget = widget)
-            is HomeWidget.TotalAssets -> TotalAssetsWidget(widget = widget)
+            is SampleViewWidget.Cards -> CardsWidget(widget = widget)
+            is SampleViewWidget.TotalAssets -> TotalAssetsWidget(widget = widget)
         }
     }
 
     @Composable
-    private fun TotalAssetsWidget(widget: HomeWidget.TotalAssets) {
+    private fun TotalAssetsWidget(widget: SampleViewWidget.TotalAssets) {
         WidgetContainer(modifier = Modifier.offset(y = SampleContentView.ITEM_OFFSET_DP.dp)) {
             WidgetTitleButton(title = stringResource(id = R.string.total_assets)) {}
 
@@ -158,7 +158,7 @@ object HomeWidgetView {
 
     @OptIn(ExperimentalFoundationApi::class)
     @Composable
-    private fun CardsWidget(widget: HomeWidget.Cards) {
+    private fun CardsWidget(widget: SampleViewWidget.Cards) {
         WidgetContainer(modifier = Modifier.offset(y = SampleContentView.ITEM_OFFSET_DP.dp)) {
             WidgetTitleButton(title = stringResource(id = R.string.cards)) {}
 

@@ -39,8 +39,8 @@ import com.puzzle_agency.androidknowledge.R
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.domain.Transaction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.parallax.ParallaxView
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.parallax.ParallaxViewActionButtonType
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.HomeWidget
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.HomeWidgetView
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.SampleViewWidget
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.SampleWidgetView
 import com.puzzle_agency.androidknowledge.knowledge.util.format
 import com.puzzle_agency.androidknowledge.ui.theme.NunitoFontFamily
 
@@ -52,7 +52,7 @@ object SampleContentView {
     fun Compose(
         modifier: Modifier,
         transactions: List<Transaction>,
-        widgets: List<HomeWidget>,
+        widgets: List<SampleViewWidget>,
         onScrollValueChange: (Int) -> Unit,
         onAccountsClick: () -> Unit,
         onParallaxActionButtonClick: (ParallaxViewActionButtonType) -> Unit,
@@ -87,7 +87,7 @@ object SampleContentView {
 
             val widgetsLastIndex = widgets.lastIndex
             widgets.forEachIndexed { index, widget ->
-                HomeWidgetView.Compose(widget = widget)
+                SampleWidgetView.Compose(widget = widget)
 
                 val isLast = index == widgetsLastIndex
                 if (!isLast) {

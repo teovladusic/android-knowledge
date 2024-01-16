@@ -11,10 +11,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.puzzle_agency.androidknowledge.knowledge.ui.base.BaseView
+import com.puzzle_agency.androidknowledge.knowledge.ui.base.Executor
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleAction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleUiState
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base.BaseView
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base.Executor
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.header.SampleHeaderView
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.header.rememberHeaderState
 import kotlinx.coroutines.flow.Flow

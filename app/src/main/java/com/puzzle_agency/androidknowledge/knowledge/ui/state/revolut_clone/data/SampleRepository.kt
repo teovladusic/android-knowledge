@@ -1,27 +1,27 @@
 package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.data
 
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.domain.Transaction
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.HomeWidget
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.view.widget.SampleViewWidget
 import java.time.LocalDateTime
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor() {
+class SampleRepository @Inject constructor() {
 
     fun getTransactions(): List<Transaction> {
         return transactions
     }
 
     @Suppress("detekt.MagicNumber")
-    fun getWidgets(): List<HomeWidget> {
+    fun getWidgets(): List<SampleViewWidget> {
         return listOf(
-            HomeWidget.TotalAssets(
+            SampleViewWidget.TotalAssets(
                 totalBalance = 50000.0,
                 cashBalance = 10000.0,
                 investingBalance = 30000.0,
                 connectedAccountsBalance = 5000.0,
                 savingsBalance = 2000.0
             ),
-            HomeWidget.Cards(
+            SampleViewWidget.Cards(
                 generalCardNumber = "*3456",
                 virtualCardNumber = "*9012"
             )

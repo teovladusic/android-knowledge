@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleAction
 import com.puzzle_agency.androidknowledge.knowledge.ui.state.SampleUiState
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base.BaseViewModel
-import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.data.HomeRepository
+import com.puzzle_agency.androidknowledge.knowledge.ui.base.BaseViewModel
+import com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.data.SampleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SampleViewModel @Inject constructor(
-    private val homeRepository: HomeRepository
+    private val sampleRepository: SampleRepository
 ) : BaseViewModel<Unit, SampleAction>() {
 
     private val headerStateHolder = SampleHeaderStateHolder(viewModelScope)
@@ -70,7 +70,7 @@ class SampleViewModel @Inject constructor(
     }
 
     private fun fetchTransactions() {
-        val transactions = homeRepository.getTransactions()
+        val transactions = sampleRepository.getTransactions()
             .take(TRANSACTIONS_COUNT)
 
         _state.update {
@@ -79,7 +79,7 @@ class SampleViewModel @Inject constructor(
     }
 
     private fun fetchWidgets() {
-        val widgets = homeRepository.getWidgets()
+        val widgets = sampleRepository.getWidgets()
 
         _state.update {
             it.copy(widgets = widgets)

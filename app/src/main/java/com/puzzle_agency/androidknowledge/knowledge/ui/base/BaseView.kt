@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base
+package com.puzzle_agency.androidknowledge.knowledge.ui.base
 
 import androidx.compose.runtime.Composable
 import kotlinx.coroutines.flow.Flow

@@ -1,4 +1,4 @@
-package com.puzzle_agency.androidknowledge.knowledge.ui.state.revolut_clone.base
+package com.puzzle_agency.androidknowledge.knowledge.ui.base
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
