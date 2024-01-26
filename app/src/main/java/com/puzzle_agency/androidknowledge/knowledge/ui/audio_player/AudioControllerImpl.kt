@@ -2,6 +2,7 @@ package com.puzzle_agency.androidknowledge.knowledge.ui.audio_player
 
 import android.content.ComponentName
 import android.content.Context
+import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
@@ -80,6 +81,7 @@ class AudioControllerImpl(context: Context) : AudioController {
                         .setTitle(it.title)
                         .setSubtitle(it.subtitle)
                         .setArtist(it.subtitle)
+                        .setArtworkUri(it.imageUrl?.toUri())
                         .build()
                 ).build()
         }

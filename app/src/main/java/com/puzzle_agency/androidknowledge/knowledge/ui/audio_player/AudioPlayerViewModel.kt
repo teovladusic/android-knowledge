@@ -30,6 +30,8 @@ class AudioPlayerViewModel @Inject constructor(
     private fun setMediaControllerCallback() {
         audioController.mediaControllerCallback = { data ->
             with(data) {
+                audioPlayerState
+
                 _state.update {
                     it.copy(
                         controllerState = it.controllerState.copy(
@@ -90,13 +92,7 @@ class AudioPlayerViewModel @Inject constructor(
         val currentAudio = audioController.getCurrentAudio()
 
         if (currentAudio == null) {
-            val newAudio = Audio(
-                "Counting",
-                "Android Knowledge",
-                "android.resource://com.puzzle_agency.androidknowledge/${R.raw.counting}",
-                imageUrl = null
-            )
-            audioController.executeAction(AudioControllerAction.AddMediaItems(listOf(newAudio)))
+            audioController.executeAction(AudioControllerAction.AddMediaItems(listOf(getDefaultAudio())))
         }
 
         when (_state.value.controllerState.playerState) {
@@ -107,6 +103,15 @@ class AudioPlayerViewModel @Inject constructor(
 
             null -> audioController.executeAction(AudioControllerAction.Play(0))
         }
+    }
+
+    private fun getDefaultAudio(): Audio {
+        return Audio(
+            title = "Counting",
+            subtitle = "Android Knowledge",
+            audioUrl = "android.resource://com.puzzle_agency.androidknowledge/${R.raw.counting}",
+            imageUrl = "android.resource://com.puzzle_agency.androidknowledge/${R.drawable.geometry}"
+        )
     }
 
     override fun onCleared() {

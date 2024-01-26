@@ -3,6 +3,7 @@ package com.puzzle_agency.androidknowledge.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -10,6 +11,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.puzzle_agency.androidknowledge.knowledge.ui.audio_player.AudioPlayerView
 import com.puzzle_agency.androidknowledge.ui.theme.AndroidKnowledgeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,6 +20,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
         setContent {
             AndroidKnowledgeTheme {
@@ -27,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column {
-                        Greeting(name = "Android Knowledge")
+                        AudioPlayerView.Compose()
                     }
                 }
             }
