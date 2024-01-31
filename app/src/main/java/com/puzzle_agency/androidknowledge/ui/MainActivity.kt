@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.puzzle_agency.androidknowledge.knowledge.object_detection.ObjectDetectionView
 import com.puzzle_agency.androidknowledge.ui.theme.AndroidKnowledgeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Column {
-                        Greeting(name = "Android Knowledge")
+                        ObjectDetectionView.Compose()
                     }
                 }
             }

@@ -20,6 +20,8 @@ class ObjectDetectionViewModel @Inject constructor() :
     val state = _state.asStateFlow()
 
     fun initTensorflowLite(context: Context) {
+        if (TfLiteVision.isInitialized()) return
+
         val options = TfLiteInitializationOptions.builder()
             .setEnableGpuDelegateSupport(true)
             .build()
