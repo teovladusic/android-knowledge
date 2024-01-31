@@ -32,6 +32,8 @@ accompanist-permissions = "0.33.2-alpha"
 firebase-messaging-ktx = "23.4.0"
 glance = "1.0.0"
 media3-session = "1.2.0"
+tensorflow-lite-gpu = "2.9.0"
+tensorflow-lite-task-vision-play-services = "0.4.2"
 
 [libraries]
 androidx-legacy-support-v4 = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacy-support-v4" }
@@ -79,6 +81,8 @@ androidx-glance = { module = "androidx.glance:glance", version.ref = "glance" }
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance" }
 work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "androidx-work-runtime-ktx" }
 androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3-session" }
+tensorflow-lite-gpu = { module = "org.tensorflow:tensorflow-lite-gpu", version.ref = "tensorflow-lite-gpu" }
+tensorflow-lite-task-vision-play-services = { module = "org.tensorflow:tensorflow-lite-task-vision-play-services", version.ref = "tensorflow-lite-task-vision-play-services" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
