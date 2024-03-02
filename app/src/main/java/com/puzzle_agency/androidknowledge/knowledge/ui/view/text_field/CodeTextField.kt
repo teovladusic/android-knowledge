@@ -13,8 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun CodeTextField(
@@ -35,23 +37,25 @@ fun CodeTextField(
         maxLines = 1,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword),
         decorationBox = {
-            Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 repeat(length) { index ->
                     val char = value.getOrNull(index)
                     Box(
                         modifier = Modifier
-                            .size(44.dp)
+                            .size(52.dp)
                             .border(
-                                width = 1.dp,
-                                color = Color(color = 0xFF272727),
-                                shape = RoundedCornerShape(8.dp)
+                                width = 0.5.dp,
+                                color = Color(color = 0xFF797979),
+                                shape = RoundedCornerShape(12.dp)
                             )
                     ) {
                         char?.let {
                             Text(
                                 text = it.toString(),
                                 modifier = Modifier.align(Alignment.Center),
-                                color = Color(color = 0xFFe5e5e5)
+                                color = Color(color = 0xFFe5e5e5),
+                                fontSize = 17.sp,
+                                fontWeight = FontWeight.SemiBold
                             )
                         }
                     }
