@@ -15,6 +15,7 @@ dagger-hilt-navigation-compose = "1.2.0"
 material-icons-extended = "1.6.2"
 media3-ui = "1.2.1"
 media3-exoplayer = "1.2.1"
+orbital = "0.3.2"
 retrofit = "2.9.0"
 retrofit-okhttp = "4.12.0"
 retrofit-converter = "1.0.0"
@@ -54,6 +55,7 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+orbital = { module = "com.github.skydoves:orbital", version.ref = "orbital" }
 ui = { group = "androidx.compose.ui", name = "ui" }
 material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger-hilt" }

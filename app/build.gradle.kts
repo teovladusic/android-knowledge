@@ -122,6 +122,9 @@ dependencies {
     implementation(libs.tensorflow.lite.task.vision.play.services)
     implementation(libs.tensorflow.lite.gpu)
 
+    // Orbital (shared element transition)
+    implementation(libs.orbital)
+
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.espresso.core)

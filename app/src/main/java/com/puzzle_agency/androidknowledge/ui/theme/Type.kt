@@ -36,6 +36,7 @@ val Typography = Typography(
 )
 
 val NunitoFontFamily = FontFamily(
+    Font(R.font.nunito_extrabold, FontWeight.ExtraBold),
     Font(R.font.nunito_bold, FontWeight.Bold),
     Font(R.font.nunito_semibold, FontWeight.SemiBold),
     Font(R.font.nunito_medium, FontWeight.Medium),
