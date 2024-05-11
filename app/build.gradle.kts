@@ -122,6 +122,8 @@ dependencies {
     implementation(libs.tensorflow.lite.task.vision.play.services)
     implementation(libs.tensorflow.lite.gpu)
 
+    implementation("io.github.klassenkonstantin:physics-layout:0.4.1")
+
     testImplementation(libs.junit)
     testImplementation(libs.robolectric)
     testImplementation(libs.espresso.core)
