@@ -19,7 +19,7 @@ import androidx.compose.ui.input.pointer.pointerInput
  * Scales the container on which you apply the modifier.
  * Should be used before any size modifiers.
  */
-fun Modifier.clickableWithBounce(pressedScale: Float = 0.9f, onClick: () -> Unit) = composed {
+fun Modifier.clickableWithBounce(pressedScale: Float = 0.9f, onClick: () -> Unit) = this.composed {
     var clickState by rememberSaveable {
         mutableStateOf(ClickState.Idle)
     }

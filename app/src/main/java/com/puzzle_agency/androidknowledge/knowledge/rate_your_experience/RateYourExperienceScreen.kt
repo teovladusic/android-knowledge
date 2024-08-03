@@ -247,18 +247,21 @@ private fun SliderExperience(
         )
         Text(
             text = "Bad",
+            color = darkColor,
             modifier = Modifier
                 .offset(y = 30.dp, x = 4.dp)
                 .align(Alignment.CenterStart)
         )
         Text(
             text = "Not bad",
+            color = darkColor,
             modifier = Modifier
                 .offset(y = 30.dp)
                 .align(Alignment.Center)
         )
         Text(
             text = "Good",
+            color = darkColor,
             modifier = Modifier
                 .offset(x = (0).dp, y = 30.dp)
                 .align(Alignment.CenterEnd)
