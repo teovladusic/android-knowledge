@@ -42,3 +42,7 @@ val NunitoFontFamily = FontFamily(
     Font(R.font.nunito_regular, FontWeight.Normal),
     Font(R.font.nunito_light, FontWeight.Light),
 )
+
+val RobotoMonoFontFamily = FontFamily(
+    Font(R.font.roboto_mono_regular, FontWeight.Normal)
+)
