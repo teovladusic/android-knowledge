@@ -10,9 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.puzzle_agency.androidknowledge.knowledge.rate_your_experience.RateYourExperienceScreen
-import com.puzzle_agency.androidknowledge.knowledge.scratch_card.ScratchCardScreen
-import com.puzzle_agency.androidknowledge.knowledge.time_picker.TimePickerScreen
+import com.puzzle_agency.androidknowledge.knowledge.swipeable_bottom_bar.SwipeableBottomBarScreen
 import com.puzzle_agency.androidknowledge.ui.theme.AndroidKnowledgeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,7 +32,7 @@ class MainActivity : ComponentActivity() {
 //                    Column {
 //                        Greeting(name = "Android Knowledge")
 //                    }
-                    TimePickerScreen()
+                    SwipeableBottomBarScreen()
                 }
             }
         }
